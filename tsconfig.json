@@ -1,12 +1,9 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
+    "target": "esnext",
+    "moduleResolution": "node",
     "module": "commonjs",
-    "lib": ["esnext"],
-    "strict": true,
-    "rootDir": "src",
-    "outDir": "dist",
     "sourceMap": true,
-    "esModuleInterop": true
+    "lib": ["esnext"]
   }
 }

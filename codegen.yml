@@ -1,11 +1,12 @@
-overwrite: true
-schema: "http://localhost:4000"
-documents: ./src/**/*.graphql
+schema: schema.graphql
 generates:
-  src/generated/graphql.ts:
+  ./src/types.ts:
     plugins:
-      - "typescript"
-      - "typescript-resolvers"
-  ./graphql.schema.json:
-    plugins:
-      - "introspection"
+      - "@graphql-codegen/typescript"
+      - "@graphql-codegen/typescript-resolvers"
+    config:
+      mappers:
+        Cart: ./model#CartModel
+        CartItem: ./model#CartItemModel
+      enumValues:
+        Currency: ./model#CurrencyCode
