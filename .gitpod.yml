@@ -1,0 +1,11 @@
+tasks:
+  - name: prepare
+    before: |
+      sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended   
+      cp .zshrc ~/.zshrc
+    init: |
+      # nvm install
+      # nvm use 
+      eval $(gp env -e)
+      npm i 
+    command: zsh
